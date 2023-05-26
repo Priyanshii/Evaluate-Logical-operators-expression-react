@@ -1,0 +1,38 @@
+div{
+  box-sizing: border-box;
+  padding: 4px;
+  font-family: 'Encode Sans Expanded', sans-serif;
+}
+
+section{
+  box-sizing: border-box;
+  padding: 4px;
+  font-family: 'Encode Sans Expanded', sans-serif;
+}
+
+input{
+  padding: 4px;
+}
+
+select{
+  padding: 4px;
+}
+
+button{
+  padding: 4px 8px;
+  margin: 4px;
+}
+
+span{
+  display: block;
+  margin: 10px;
+  margin-left: 12px;
+}
+
+body{
+  margin: 10px;
+}
+
+.subSection{
+  margin-left: 10px;
+}
