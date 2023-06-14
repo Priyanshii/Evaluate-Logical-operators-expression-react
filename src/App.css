@@ -1,38 +1,147 @@
-div{
+body{
+  background-color: #e9d5a1;
+  font-family: 'Encode Sans Expanded', sans-serif;
+  box-sizing: border-box;
+}
+
+.mainContainer{
   box-sizing: border-box;
   padding: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-family: 'Encode Sans Expanded', sans-serif;
 }
 
-section{
-  box-sizing: border-box;
-  padding: 4px;
-  font-family: 'Encode Sans Expanded', sans-serif;
+.mainContainer article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
 }
 
-input{
-  padding: 4px;
+.mainTitle{
+  margin-bottom: 40px;
 }
 
-select{
-  padding: 4px;
+.argumentList{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.argumentListHeading{
+  margin-bottom: 20px;
+}
+
+.argumentContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+
+.argumentListContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+
+.singleArgument{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
 
 button{
-  padding: 4px 8px;
-  margin: 4px;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-span{
-  display: block;
-  margin: 10px;
-  margin-left: 12px;
+.selectContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
 }
 
-body{
-  margin: 10px;
+.operatorWithArgumentContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.expressionEvaluationContainer{
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  align-items: flex-start;
+}
+
+.selectOperatorContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.logicalOperatorContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+input{
+  padding: 8px;
+  outline: none;
+  border: 1px solid transparent;
+}
+
+input:focus{
+  border: 1px solid black;
+}
+
+select{
+  background-color: white;
+  width: 150px;
+  padding: 8px;
+  outline: none;
+  border: 1px solid transparent;
+}
+
+select:focus{
+  border: 1px solid black;
+}
+
+.booleanValueSelect{
+  background-color: white;
+  width: 100px;
+  padding: 8px;
+  outline: none;
+  border: 1px solid transparent;
 }
 
 .subSection{
-  margin-left: 10px;
+  margin-left: 20px;
+}
+
+.addOperatorButton{
+  margin-left: 20px;
+  margin-bottom: 10px;
 }

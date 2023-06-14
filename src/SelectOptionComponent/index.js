@@ -7,16 +7,12 @@ const SelectOptionComponent = ({id, handleResult, argumentList}) => {
   const [constantBooleanValue, setConstantBooleanValue] = useState(0);
   const [argumentSelectedInputName, setArgumentSelectedInputName] = useState(0);
   const [activeArgumentIndex, setActiveArgumentIndex] = useState(0);
-
   const [selectBoxBooleanValue, setSelectBoxBooleanValue] = useState({0: undefined, 1: undefined});
   const [index, setIndex] = useState(2);
 
   useEffect(() => {
     handleArguementListUpdate();
   },[argumentList])
-
-  useEffect(() => {
-  },[constantBooleanValue])
 
   const handleArguementListUpdate = () => {
     if(selectOption === "argument"){
@@ -93,11 +89,11 @@ const SelectOptionComponent = ({id, handleResult, argumentList}) => {
   }
   
   return (
-    <section> 
+    <section className='operatorWithArgumentContainer'> 
         {
           selectOption === "select"
           &&
-          <>
+          <div className='selectOperatorContainer'>
             <select value={selectOption} onChange={e => handleSelectOption(e)} >
               <option value="select" disabled>select...</option>
               <option value="constant">constant</option>
@@ -108,23 +104,23 @@ const SelectOptionComponent = ({id, handleResult, argumentList}) => {
             <button onClick={()=>{resetSelectedOption()}}>
               &#215;
             </button>
-          </>
+          </div>
         }
         {
           selectOption === "constant"
           &&
-          <>
+          <div className='selectOperatorContainer'>
             <select value={constantBooleanValue} onChange={(e) => handleConstantSelectOption(e)}>
               <option value={0}>false</option>
               <option value={1}>true</option>
             </select>
             <button onClick={()=>{resetSelectedOption()}}>&#215;</button>
-          </>
+          </div>
         }
         {
           selectOption === "argument"
           &&
-          <>
+          <div className='selectOperatorContainer'>
             <select value={argumentSelectedInputName} onChange={(e) => handleSelectArgumentInputName(e)}>
               <option value="select" disabled>select...</option>
               {
@@ -134,32 +130,32 @@ const SelectOptionComponent = ({id, handleResult, argumentList}) => {
               }
             </select>
             <button onClick={()=>{resetSelectedOption()}}>&#215;</button>
-          </>
+          </div>
         }
         {
           (selectOption === "and" || selectOption === "or")
           &&
           <>
-          <section>
-            <select value={selectOption} onChange={e => handleSelectOption(e)} >
-              <option value="select" disabled>select...</option>
-              <option value="constant">constant</option>
-              <option value="argument">argument</option>
-              <option value="and">and</option>
-              <option value="or">or</option>
-            </select> 
-            <button onClick={()=>{resetSelectedOption()}}>&#215;</button>
-          </section>
-          <section className='subSection'>
-            {
-              Object.keys(selectBoxBooleanValue).map((input) => {
-                return(
-                  <SelectOptionComponent id={input} key={input} handleResult={handleSelectBoxBooleanValue} argumentList={argumentList} />
-                )
-              })
-            }
-          </section>
-          <button onClick={()=>{(handleAddOp())}}>+ add op</button>
+            <section className='logicalOperatorContainer'>
+              <select value={selectOption} onChange={e => handleSelectOption(e)} >
+                <option value="select" disabled>select...</option>
+                <option value="constant">constant</option>
+                <option value="argument">argument</option>
+                <option value="and">and</option>
+                <option value="or">or</option>
+              </select> 
+              <button onClick={()=>{resetSelectedOption()}}>&#215;</button>
+            </section>
+            <section className='subSection'>
+              {
+                Object.keys(selectBoxBooleanValue).map((input) => {
+                  return(
+                    <SelectOptionComponent id={input} key={input} handleResult={handleSelectBoxBooleanValue} argumentList={argumentList} />
+                  )
+                })
+              }
+            </section>
+            <button onClick={()=>{(handleAddOp())}} className='addOperatorButton'>+ add op</button>
           </>
         }
     </section>
